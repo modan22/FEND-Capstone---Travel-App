@@ -1,0 +1,135 @@
+/* Initial hidden state for modal */
+.popover-modal {
+    display: none;
+}
+
+/* Mask styling */
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(52, 73, 94, 0.8);
+    z-index: 50;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.7s ease, visibility 0.7s ease;
+}
+
+/* Modal styling */
+.modal {
+    display: grid;
+    height: 100vh;
+    max-height: 620px;
+    grid-gap: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #fffff8;
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    transform: translateY(45px);
+    grid-template-areas: 
+        'header'
+        'left' 
+        'right' 
+        'footer';
+}
+
+@media (min-width: 500px) and (max-width: 700px) {
+    .modal {
+        grid-gap: 1em;
+        grid-template-areas: 
+            'header header' 
+            'left right' 
+            'footer footer';
+        height: 470px;
+    }
+}
+
+@media (min-width: 700px) {
+    .modal {
+        top: 50%;
+        left: 50%;
+        width: 500px;
+        height: 470px;
+        margin-left: -250px; /* Adjusted margin for centering */
+        margin-top: -235px;  /* Adjusted margin for centering */
+        grid-gap: 1em;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 60px auto 80px;
+        grid-template-areas: 
+            'header header'
+            'left right'
+            'footer footer';
+    }
+}
+
+/* Active state */
+.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.active + .modal {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Close button styling */
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35px;
+    height: 30px;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Layout areas */
+.left-side {
+    grid-area: left;
+    margin: auto;
+}
+
+.right-side {
+    grid-area: right;
+    margin: auto;
+}
+
+.modal-header {
+    grid-area: header;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.header__text {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.modal-footer {
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-top: 1px solid #e6e6e6;
+}
+
+.destination__img {
+    height: 200px;
+    width: 200px;
+    margin-top: 1em;
+}

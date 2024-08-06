@@ -1,0 +1,32 @@
+/* Footer styling */
+footer {
+    grid-area: ft;
+    height: 30px;
+    color: #222;
+    padding: 10px 0;
+    background-color: #f8f8f8;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+}
+
+/* Floating Action Button (FAB) styling */
+.fab {
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.fab:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.fab:active {
+    background-color: #003f7f;
+}

@@ -1,0 +1,80 @@
+/* Navigation */
+nav {
+    grid-area: nav;
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+}
+
+#title {
+    display: flex;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2em;
+    letter-spacing: 0.05em;
+    color: #222;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-weight: 700;
+}
+
+#menu {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s;
+}
+
+li {
+    padding: 0 5px;
+}
+
+.item {
+    list-style-type: none;
+    margin: 5px;
+}
+
+.item > a {
+    color: #222;
+    padding: 8px 20px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+.item > a:hover,
+.item > a:active,
+.item > a.selected {
+    color: #fff;
+    background-color: #e54b4b;
+    border: 1px solid #e54b4b;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    nav {
+        height: 60px;
+    }
+    #title {
+        width: 40%;
+        justify-content: flex-start;
+    }
+    #menu {
+        width: 60%;
+        justify-content: flex-end;
+    }
+    nav ul {
+        font-size: 1em;
+    }
+}
